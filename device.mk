@@ -232,7 +232,8 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common
+    ims-ext-common \
+    CarrierConfigOverlay
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -282,6 +283,10 @@ PRODUCT_PACKAGES += \
 # LiveDisplay native
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
+
+# LMKD
+# Enable stats logging in LMKD
+TARGET_LMKD_STATS_LOG := true
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -462,7 +467,8 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl:64 \
-    android.hardware.thermal@1.0-service
+    android.hardware.thermal@1.0-service \
+    thermal.msm8937
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
